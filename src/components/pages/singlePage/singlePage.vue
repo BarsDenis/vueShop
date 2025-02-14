@@ -1,14 +1,14 @@
 <template>
     <section class="q-pv-3">
-        <singleProduct />
+        <single-product></single-product>
     </section>
 </template>
 
 <script>
-import singleProduct from "../../templates/singlePage/singleProduct.vue";
+import SingleProduct from "../../templates/singlePage/SingleProduct.vue";
 export default {
     components: {
-        singleProduct,
+        SingleProduct,
         
     },
 };

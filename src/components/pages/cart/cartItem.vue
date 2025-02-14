@@ -1,7 +1,7 @@
 <template>
     <div class="q-row q-bg-beige q-p-2 q-mb-2">
         <div class="q-col">
-            <img :src="product.thumbnail" :alt="product.title" loading="lazy" />
+            <img :src="product.thumbnail" :alt="product.title" />
         </div>
         <div class="q-col">
             <div class="q-h3-style q-bold">
@@ -12,7 +12,7 @@
             </div>
             <div class="q-bold q-d-flex q-flex-jcsb">
                 <div>
-                    <quantityBlock :product="product" />
+                    <quantity-block :product="product"></quantity-block>
                 </div>
                 <p>Price: ${{ itemTotal }}</p>
             </div>
@@ -29,21 +29,26 @@
 </template>
 
 <script>
-import quantityBlock from "../../ui/quantityBlock.vue";
+import QuantityBlock from "../../ui/QuantityBlock.vue";
 
 export default {
     name: "CartItem",
     components: {
-        quantityBlock,
+        QuantityBlock,
     },
     props: {
         product: {
             type: Object,
             required: true,
             validator(value) {
-                return ["id", "title", "price", "quantity", "stock"].every(
-                    (prop) => prop in value
-                );
+                return [
+                    "id",
+                    "title",
+                    "price",
+                    "quantity",
+                    "stock",
+                    "description",
+                ].every((prop) => prop in value);
             },
         },
     },

@@ -1,10 +1,10 @@
 <template>
     <div>
-        <button v-if="!isInCart" class="q-btn q-btn-red" @click="addToCart">
+        <button v-if="!isInCart" class="q-btn q-btn-blue-inverted" @click="addToCart">
             Add to Cart
         </button>
 
-        <router-link v-else to="/cart" class="q-btn q-btn-red-dimm">
+        <router-link v-else to="/cart" class="q-btn q-btn-green-dimm">
             Go to Cart
         </router-link>
     </div>

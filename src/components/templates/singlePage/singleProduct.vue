@@ -6,26 +6,26 @@
     <div class="q-container">
         <div class="q-row q-flex-ait">
             <div class="q-col q-basis-40">
-                <singleProductImage :cardInfo="data" />
+                <singleProduct-image :cardInfo="data"></singleProduct-image>
             </div>
             <div class="q-col q-basis-60">
-                <singleProductInfo :cardInfo="data" />
-                <addToCartButton :cardInfo="data"/>
+                <single-productInfo :cardInfo="data"></single-productInfo>
+                <addToCart-button :cardInfo="data"></addToCart-button>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import singleProductInfo from "./singleProductInfo.vue";
-import singleProductImage from "./singleProductImage.vue";
-import addToCartButton from "../../ui/addToCartButton.vue"
+import SingleProductInfo from "./SingleProductInfo.vue";
+import SingleProductImage from "./SingleProductImage.vue";
+import AddToCartButton from "../../ui/AddToCartButton.vue"
 
 export default {
     components: {
-        singleProductInfo,
-        singleProductImage,
-        addToCartButton
+        SingleProductInfo,
+        SingleProductImage,
+        AddToCartButton
     },
     data() {
         return {

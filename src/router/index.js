@@ -7,19 +7,19 @@ const router = createRouter({
         {
             path: "/",
             name: "homePage",
-            component: () => import("../pages/home/homePage.vue"),
+            component: () => import("../components/pages/home/homePage.vue"),
         },
         {
             path: "/product/:id",
             name: "singlePage",
             component: () =>
-                import("../pages/singlePage/singlePage.vue"),
+                import("../components/pages/singlePage/singlePage.vue"),
         },
         {
             path: "/cart",
             name: "cardPage",
             component: () =>
-                import("../pages/cart/cartPage.vue"),
+                import("../components/pages/cart/cartPage.vue"),
         },
     ],
 });

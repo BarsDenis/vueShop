@@ -16,12 +16,12 @@
             </div>
 
             <template v-if="cartItems.length">
-                <CartItem
+                <cart-item
                     v-for="product in cartItems"
                     :key="product.id"
                     :product="product"
                     @remove="removeProduct"
-                />
+                ></cart-item>
 
                 <div class="cart-total q-mt-3">
                     <div class="total-amount q-text-right">

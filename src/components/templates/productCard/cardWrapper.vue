@@ -1,17 +1,17 @@
 <template>
     <section>
         <div class="q-container">
-            <cardContainer :cardContainer="data" />
+            <card-container :cardContainer="data"></card-container>
             <div v-if="isLoading" class="q-text-green">Loading.......</div>
         </div>
     </section>
 </template>
 
 <script>
-import cardContainer from "./cardContainer.vue";
+import CardContainer from "./CardContainer.vue";
 export default {
     components: {
-        cardContainer,
+        CardContainer,
     },
 
     data() {
@@ -19,7 +19,7 @@ export default {
             data: [],
             skipNumber: 0,
             dataLength: 0,
-            isLoading: false
+            isLoading: false,
         };
     },
     methods: {
@@ -31,7 +31,7 @@ export default {
                 const list = await res.json();
                 this.data = list.products;
                 this.dataLength = list.total;
-                console.log(this.data)
+                console.log(this.data);
             } catch (error) {
                 console.error("Error fetching data:", error);
                 throw error;
@@ -60,7 +60,6 @@ export default {
             if (position >= threshold && this.data.length < this.dataLength) {
                 this.skipNumber += 9;
                 this.moreLoadingData();
-           
             }
             if (this.data.length >= this.dataLength) {
                 this.isLoading = false;
@@ -70,8 +69,8 @@ export default {
     created() {
         window.addEventListener("scroll", this.handleScroll);
     },
-    mounted() {
-        this.fetchProducts();
+    async mounted() {
+        await this.fetchProducts();
     },
 };
 </script>

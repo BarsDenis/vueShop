@@ -21,7 +21,7 @@
 
 <script>
 export default {
-    name: "card-item",
+    name: "cardItem",
     props: {
         card: {
             type: Object,
@@ -33,5 +33,8 @@ export default {
 <style scoped>
 a {
     text-decoration: none;
+}
+img {
+    height: 300px;
 }
 </style>

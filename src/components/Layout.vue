@@ -1,5 +1,5 @@
 <template>
-    <header-part/>
+    <header-part></header-part>
     <main>
         <router-view> </router-view>
     </main>
@@ -9,10 +9,10 @@
 </template>
 
 <script>
-import headerPart from './header/headerPart.vue'
+import HeaderPart from './header/HeaderPart.vue'
 export default {
     components: {
-        headerPart
+        HeaderPart
     }
 }
 </script>
